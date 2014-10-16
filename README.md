@@ -6,17 +6,11 @@ If you are utilizing TLS on your mail server and wish to send email alerts via u
 Download here and unzip on the monitoring station under C:\Program Files\uptime software\uptime\scripts\
 
 To use, configure your email email configuration within up.time under the Config tab.  Here is an example of a configuration for Gmail.
-
-SMTP Server		    smtp.gmail.com
-
-SMTP User		      some.user
-
-SMTP Password		  somePassword
-
-SMTP Port		      587
-
-SMTP Sender		    some.user@gmail.com
-
-SMTP HELO String	uptimesoftware.com
+* SMTP Server: smtp.gmail.com
+* SMTP User: some.user
+* SMTP Password: somePassword
+* SMTP Port: 587
+* SMTP Sender: some.user@gmail.com
+* SMTP HELO String: uptimesoftware.com
 
 Now that the mail server that up.time should use is configured, create an Alert Profile using the Script alert option.  In the path, enter the path to the mailsend.bat file (ex. C:\Program Files\uptime software\uptime\scripts\mailsend\mailsend.bat).  Define the notification group and save.  Test the Alert profile to confirm the notification group received the email.
