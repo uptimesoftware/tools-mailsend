@@ -14,6 +14,8 @@ echo Service Status: %UPTIME_SVCSTATUS% >> email.txt
 echo. >> email.txt
 echo Service Output: %UPTIME_SVCOUTPUT% >> email.txt
 
-set SMTPSENDERNAME="up.time Alert"
+set SMTPSENDERNAME="uptime Monitoring Station"
+set SUBJECT="up.time Alert %UPTIME_SVCNAME% -> %UPTIME_SVCSTATUS%" 
 
-mailsend1.17b15.exe -to %UPTIME_EMAIL% -name %SMTPSENDERNAME% -from %UPTIME_SMTPSENDER% -starttls -smtp %UPTIME_SMTPSERVER% -port %UPTIME_SMTPPORT% -sub %UPTIME_SUBJECT% -msg-body email.txt +cc +bc -q -auth-plain -user %UPTIME_SMTPUSER% -pass %UPTIME_SMTPPASSWORD%
+
+mailsend1.17b15.exe -to %UPTIME_EMAIL% -name %SMTPSENDERNAME% -from %UPTIME_SMTPSENDER% -starttls -smtp %UPTIME_SMTPSERVER% -port %UPTIME_SMTPPORT% -sub %SUBJECT% -msg-body email.txt +cc +bc -q -auth-plain -user %UPTIME_SMTPUSER% -pass %UPTIME_SMTPPASSWORD%
